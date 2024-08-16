@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: #ffc0dc;
+        }
+
+        .card {
+            position: relative;
+            width: 250px;
+            height: 300px;
+        }
+
+        .card .face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.6s;
+        }
+
+        .card .front {
+            transform: perspective(600px) rotateY(0deg);
+            box-shadow: 0 5px 10px #ff1b82;
+        }
+
+        .card .front img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card .front h1 {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            color: white;
+            background: #f47edd;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .card .back {
+            transform: perspective(600px) rotateY(180deg);
+            background: #ff1b82;
+            padding: 15px;
+            color: #f3f3f3;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
+            box-shadow: 0 5px 10px #ff1b82;
+        }
+
+        .card .back h1 {
+            margin-top: 5px;
+            letter-spacing: 1px;
+            font-size: 18px;
+        }
+
+        .card .back p {
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        .card:hover .front {
+            transform: perspective(600px) rotateY(180deg);
+        }
+
+        .card:hover .back {
+            transform: perspective(600px) rotateY(360deg);
+        }
+
+        @media (min-width: 600px) {
+            .card {
+                width: 300px;
+                height: 350px;
+            }
+
+            .card .front h1 {
+                height: 45px;
+                line-height: 45px;
+                font-size: 18px;
+            }
+
+            .card .back h1 {
+                font-size: 20px;
+            }
+
+            .card .back p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="face front">
+            <img src="Feliz cumple .png" alt="Feliz Cumpleaños">
+            <h1>Click aquí</h1>
+        </div>
+        <div class="face back">
+            <h1>Feliz Cumple</h1>
+            <p>Espero que estes pasando un hermoso cumpelaños <br> sabes que te quiero mucho y apesar de todo siempre te voy a querer <br> siempre vas a poder contar con migo estemos o no juntos <br> espero que pases un hermoso dia y que lo disfrutes al maximo <br> TE QUIEOR MUCHO </p>
+        </div>
+    </div>
+</body>
+
+</html>
